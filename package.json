@@ -1,0 +1,32 @@
+{
+  "name": "map-performance",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "console": "node devconsole.js",
+    "dev": "nodemon | node_modules\\.bin\\bunyan",
+    "dev-test": "jest --coverage --runInBand | node_modules/.bin/bunyan",
+    "dev-test-watch": "jest --watch --runInBand | node_modules/.bin/bunyan",
+    "dev-test-watch-all": "jest --watchAll --runInBand | node_modules/.bin/bunyan",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
+    "migrate:currentVersion": "knex migrate:currentVersion",
+    "migrate:latest": "knex migrate:latest",
+    "migrate:make": "knex migrate:make",
+    "migrate:rollback": "knex migrate:rollback",
+    "pre-commit-msg": "echo 'Pre-commit linting and unit testing' && exit 0",
+    "seed:run": "knex seed:run",
+    "start": "node index.js --keepAliveTimeout 60000",
+    "test": "jest --coverage --runInBand --forceExit",
+    "test-watch": "jest --watch --runInBand",
+    "test-watch-all": "jest --watchAll --runInBand",
+    "localIntegrationTest": "knex migrate:latest && node index.js"
+  },
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "lodash": "^4.17.10",
+    "ramda": "^0.25.0",
+    "benchmark": "^2.1.4"
+  }
+}
